@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  typesense:
+    image: typesense/typesense:0.25.0
+    restart: on-failure
+    ports:
+      - "8108:8108"
+    volumes:
+      - typesense-data:/data
+    command: '--data-dir /data --api-key=xyz --enable-cors'
+
+  typesense-ui:
+    image: ghcr.io/bfritscher/typesense-dashboard:latest
+    restart: on-failure
+    ports:
+      - "8080:80"
+    volumes:
+      - ./config.json:/srv/config.json
+volumes:
+  typesense-data:

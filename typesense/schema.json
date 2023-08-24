@@ -1,0 +1,122 @@
+{
+    "name": "users",
+    "fields": [
+      {
+        "name": "yob",
+        "type": "int32",
+        "facet": false,
+        "optional": false,
+        "index": true,
+        "sort": true,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "facet": false,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "first_name",
+        "type": "string",
+        "facet": true,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "last_name",
+        "type": "string",
+        "facet": true,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "ip_address",
+        "type": "string",
+        "facet": true,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "gender",
+        "type": "string",
+        "facet": true,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "secondary_language",
+        "type": "string",
+        "facet": true,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "nationality",
+        "type": "string",
+        "facet": true,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "primary_language",
+        "type": "string",
+        "facet": true,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": ""
+      },
+      {
+        "name": "embedding",
+        "type": "float[]",
+        "facet": false,
+        "optional": false,
+        "index": true,
+        "sort": false,
+        "infix": false,
+        "locale": "",
+        "embed": {
+          "from": [
+            "first_name",
+            "last_name",
+            "gender",
+            "nationality",
+            "primary_language",
+            "secondary_language"
+          ],
+          "model_config": {
+            "model_name": "ts/all-MiniLM-L12-v2"
+          }
+        }
+      }
+    ],
+    "default_sorting_field": "yob",
+    "enable_nested_fields": true,
+    "symbols_to_index": [],
+    "token_separators": []
+  }
